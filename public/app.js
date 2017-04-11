@@ -1,4 +1,7 @@
-
+var catsArray = [
+{name: "Boba", food: "Sock Fluff", picture: "http://66.media.tumblr.com/d1f01bbe0150fda0c40d2151c5eaeac8/tumblr_odlqqskjj61v9cejwo1_400.jpg"},
+{name: "Barnaby", food: "Tuna", picture: "https://d2wq73xazpk036.cloudfront.net/media/27FB7F0C-9885-42A6-9E0C19C35242B5AC/A7BC70EF-2E93-47DA-A355C4B22039324E/thul-6818f8f2-2711-5159-9648-cc23606b037c.jpg?response-content-disposition=inline"},
+{name: "Max", food: "Whiskas Temptations", picture: "http://66.media.tumblr.com/7c5784ea89369c780e782bf10c60315a/tumblr_npb0hlYwhV1u63jaco1_1280.jpg"},]
 
 var createUlist = function(){
   var ulist = document.createElement("ul");
@@ -40,6 +43,10 @@ var appendElements = function(ul,li,liFood,imgInLi){
 var app = function(){
 
   addCat("Pedro", "Gin soaked raisons", "https://www.royalcanin.com/~/media/Royal-Canin/Product-Categories/cat-adult-landing-hero.ashx");
+
+  for (i = 0; i < catsArray.length; i++){
+      addCat(catsArray[i].name, catsArray[i].food, catsArray[i].picture)
+    }
 
 };
 
