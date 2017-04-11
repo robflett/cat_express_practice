@@ -3,6 +3,26 @@
   height: 50px;
 }
 
+ul {
+  list-style-type: none;
+  width: 500px;
+}
+
+li {
+  padding: 10px;
+  overflow: auto;
+}
+
+li img {
+  float: left;
+  margin: 0 15px 0 0;
+}
+
+li:hover {
+  background: #eee;
+  cursor: pointer;
+}
+
 .red-quote{
   color: red;
 }
