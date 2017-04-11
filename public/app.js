@@ -1,58 +1,57 @@
-// var addCat = function(name, food, image){
-//  var ul = createUl();
-//  var li = createLi(name, food);
-//  var img = createImg(image);
 
-//  appendElements(name, food, image);
-// }
+
+var createUlist = function(){
+  var ulist = document.createElement("ul");
+  ulist.classList.add("cat");
+  console.log(ulist);
+  return ulist
+}
+
+var createLiForName = function(name){
+  var li = document.createElement("li");
+  li.innerText = "Name: " + name
+  return li
+}
+
+var createLiForFood = function(food){
+  var liFood = document.createElement("li");
+  liFood.innerText = "Favourite Food: " + food
+  return liFood
+}
+
+var createImg = function(image){
+  var img = document.createElement("img");
+  img.width = "500"
+  img.src = image
+  var imgInLi = document.createElement("li");
+  imgInLi.appendChild(img)
+  return imgInLi
+}
+
+var appendElements = function(ul,li,liFood,imgInLi){
+ ul.appendChild(li)
+ ul.appendChild(liFood)
+ ul.appendChild(imgInLi)
+
+ var cats = document.querySelector("#cats");
+ cats.appendChild(ul);
+}
 
 var app = function(){
 
-  var ul = document.createElement("ul");
-  ul.classList.add("cat");
+  addCat("Pedro", "Gin soaked raisons", "https://www.royalcanin.com/~/media/Royal-Canin/Product-Categories/cat-adult-landing-hero.ashx");
 
-  var li = document.createElement("li");
-  li.innerText = "Name: Fredo"
+};
 
-  var li2 = document.createElement("li2");
-  li2.innerText = "Favourite Food: Fredos"
+var addCat = function(name, food, image){
+ var ulist = createUlist();
+ var liName = createLiForName(name);
+ var liFood = createLiForFood(food);
+ var img = createImg(image);
 
-
-
-  var img = document.createElement("img");
-  img.width = "500"
-  img.src = "https://static.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg"
- 
-  li.appendChild(img);
-
-  ul.appendChild(li);
-
-  ul.appendChild(li2);
-
-  
-
-  var cats = document.querySelector("#cats");
-  cats.appendChild(ul);
-
-  // var article = document.createElement("article");
-  // article.classList.add("quote");
-
-  // var blockquote = document.createElement("blockquote");
-  // blockquote.innerText = "Anyone want a Club? ";
-
-  // var cite = document.createElement("cite");
-  // cite.innerText = "Keith";
-
-  // blockquote.appendChild(cite);
-
-  // article.appendChild(blockquote);
-
-  // var quotes = document.querySelector("#quotes");
-  // quotes.appendChild(article);
-
-
-
+ appendElements(ulist, liName, liFood, img);
 }
+
 
 
 window.onload = app;
